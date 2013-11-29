@@ -9,4 +9,4 @@ Group Members and Contact Information:
 | Bonghyun Kim| <bonghyun5@berkeley.edu> | bonghyun5|
 | Tay Won Shin | <taywonshin@berkeley.edu> | taywon|
 | Disi Koa| <dkoa@berkeley.edu> | gnolnait|
-|Alice|<aliceman@berkeley.edu>|  
+|Yee Tung Man |<aliceman@berkeley.edu>| amx01|
