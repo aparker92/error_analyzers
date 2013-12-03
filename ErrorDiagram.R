@@ -5,22 +5,25 @@
 #  modelFunction = function written in R for Eqarthquake analysis
 #  parameters = list of parameters
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
+  #Extracts Data
   times = data[,1]
   mags = data[,2]
   
+  #Sets time period for training, testing, and entire period
   training.period = as.numeric(testStartDate - startDate)
   testing.period = as.numeric(finishDate - testStartDate)
   entire.period = as.numeric(finishDate - startDate)
-  
   timelist = 2:training.period
   n.training = sum(times<training.period)
   n.test = sum(times<period) - n.training
   
+  #Dummy Confidence interval object
   CI.dist=rep(NA,length(timelist))
   CI.list=rep(NA,n.training)
   
   n.events = sapply(timelist,function(x){sum(times<x)})
   
+  #Extracts Parameters
   mu.hat = parameters["mu.hat"]
   K.hat = parameters["K.hat"]
   alpha.hat = parameters["alpha.hat"]
@@ -41,9 +44,11 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
   xx=seq(3,7473,10)
   yy=length(xx)
   
+  #Actually plots the data
   plot(seq(0,1,length.out=yy),nu.CI[xx],type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
 }
 
+#Sample example for how the above function works
 socal.dat = read.table("/Users/bonghyunkim/Downloads/socal.txt",header=T)
 start = ISOdate(1984,1,1,0,0,0)
 test.start = ISOdate(2004,6,18,0,0,0)
