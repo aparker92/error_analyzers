@@ -17,7 +17,7 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
   entire.period = as.numeric(finishDate - startDate)
   timelist = 2:training.period
   n.training = sum(times<training.period)
-  n.test = sum(times<period) - n.training
+  n.test = sum(times<entire.period) - n.training
   
   #Dummy Confidence interval object
   CI.dist=rep(NA,length(timelist))
@@ -43,18 +43,18 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
   nu.CI=sapply(CI.dist,function(x){mean(CI.list<x)})
   nu.CI=sort(nu.CI,decreasing=T)
   
-  xx=seq(3,7473,10)
+  xx=seq(1,length(nu.CI))
   yy=length(xx)
   
-  x = seq(0,1,length.out==yy)
+  x = seq(0,1,length.out=yy)
   y = nu.CI[xx]
-  #Requires "pracma" package to use trapz function.
-  #Gets area under the curve using trapezoid method.
-  AUC = trapz(x,y)
-  return(AUC)
-  
+
   #Actually plots the data
   plot(x,y,type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
+  
+  #Requires "pracma" package to use trapz function.
+  #Gets area under the curve using trap  
+  return(trapz(x,y))
 }
 
 #Sample example for how the above function works
