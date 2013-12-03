@@ -11,6 +11,10 @@
 
 library(pracma)
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
+
+  etas.CI <- function (time,t.events,mag.events,m0,mu,K,alpha,c,p) {
+  mu+sum(K*10^(alpha*(mag.events-m0))/(time-t.events+c)^p)
+  }
   #Extracts Data
   times = data[,1]
   mags = data[,2]
@@ -69,9 +73,9 @@ socal.dat = read.table("/Users/bonghyunkim/Downloads/socal.txt",header=T)
 start = ISOdate(1984,1,1,0,0,0)
 test.start = ISOdate(2004,6,18,0,0,0)
 finish = ISOdate(2010,1,1,0,0,0)
-etas.CI <- function (time,t.events,mag.events,m0,mu,K,alpha,c,p) {
-  mu+sum(K*10^(alpha*(mag.events-m0))/(time-t.events+c)^p)
-}
+
+
+#Example 1
 
 parameters = c(mu.hat = 1, 
                K.hat = 1,
@@ -79,4 +83,14 @@ parameters = c(mu.hat = 1,
                c.hat = 1,
                p.hat = 1)
 
+createErrorDiagram(socal.dat, start, test.start, finish, etas.CI, parameters)
+
+
+#Example 2
+parameters = c(mu.hat = .329505837595229, 
+               K.hat = .0224702963795154,
+               alpha.hat = 1.5839343640414,
+               c.hat = .037651249192514,
+               p.hat = 1.38508560377488)
+               
 createErrorDiagram(socal.dat, start, test.start, finish, etas.CI, parameters)
