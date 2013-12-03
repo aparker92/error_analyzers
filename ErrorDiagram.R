@@ -4,6 +4,8 @@
 #  startDate, testStartDate, finishDate = ISO data format
 #  modelFunction = function written in R for Eqarthquake analysis
 #  parameters = list of parameters
+
+library(pracma)
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
   #Extracts Data
   times = data[,1]
@@ -44,8 +46,15 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
   xx=seq(3,7473,10)
   yy=length(xx)
   
+  x = seq(0,1,length.out==yy)
+  y = nu.CI[xx]
+  #Requires "pracma" package to use trapz function.
+  #Gets area under the curve using trapezoid method.
+  AUC = trapz(x,y)
+  return(AUC)
+  
   #Actually plots the data
-  plot(seq(0,1,length.out=yy),nu.CI[xx],type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
+  plot(x,y,type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
 }
 
 #Sample example for how the above function works
