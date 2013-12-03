@@ -45,7 +45,7 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
                         m0=3,mu=.1687,K=.04225,alpha=1.034/log(10),c=.01922,p=1.222)}
   
   nu.CI=sapply(CI.dist,function(x){mean(CI.list<x)})
-  nu.CI=sort(nu.CI,decreasing=T)
+  nu.CI=sort(nu.CI,decreasing=TRUE)
   
   xx=seq(3,7473,10)
   yy=length(xx)
