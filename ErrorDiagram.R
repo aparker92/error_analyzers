@@ -49,17 +49,19 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
   
   xx=seq(1,length(nu.CI))
   yy=length(xx)
+  if (length(xx) == 2) {
+    print("Not Enough Significant Data")
+  } else {
+    x = seq(0,1,length.out=yy)
+    y = nu.CI[xx]
+    #Actually plots the data
+    plot(x,y,type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
   
-  x = seq(0,1,length.out=yy)
-  y = nu.CI[xx]
-
-  #Actually plots the data
-  plot(x,y,type="l",xlab=expression(tau),ylab=expression(nu),main="Error Diagram",ylim=c(0,1),col="red",lty=1)
-  
-  #Requires "pracma" package to use trapz function.
-  #Gets area under the curve using trap
-  #AUC = trapz(x,y)
-  #print(AUC)
+    #Requires "pracma" package to use trapz function.
+    #Gets area under the curve using trap
+    AUC = trapz(x,y)
+    print(AUC)
+  }
 }
 
 #Sample example for how the above function works
@@ -71,10 +73,10 @@ etas.CI <- function (time,t.events,mag.events,m0,mu,K,alpha,c,p) {
   mu+sum(K*10^(alpha*(mag.events-m0))/(time-t.events+c)^p)
 }
 
-parameters = c(mu.hat = 0, 
-               K.hat = 0,
-               alpha.hat = 0,
-               c.hat = 0,
-               p.hat = 0)
+parameters = c(mu.hat = 1, 
+               K.hat = 1,
+               alpha.hat = 1,
+               c.hat = 1,
+               p.hat = 1)
 
 createErrorDiagram(socal.dat, start, test.start, finish, etas.CI, parameters)
