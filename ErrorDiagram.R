@@ -5,6 +5,10 @@
 #  modelFunction = function written in R for Eqarthquake analysis
 #  parameters = list of parameters
 
+#  To install 'pracma' R package:
+#  Within R Studio open the window in the lower right corner of your screen.
+#  Open _Packages_ > *Install Packages* > search for 'pracma' and install.
+
 library(pracma)
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
   #Extracts Data
@@ -41,7 +45,7 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
                         m0=3,mu=.1687,K=.04225,alpha=1.034/log(10),c=.01922,p=1.222)}
   
   nu.CI=sapply(CI.dist,function(x){mean(CI.list<x)})
-  nu.CI=sort(nu.CI,decreasing=T)
+  nu.CI=sort(nu.CI,decreasing=TRUE)
   
   xx=seq(1,length(nu.CI))
   yy=length(xx)
