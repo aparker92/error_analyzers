@@ -14,6 +14,8 @@ Bonghyun's expertise in coding enabled us to find the pracma package which easil
 Accomplishments
 ===============
 1) Used the pracma package (practical numerical math functions) to calculate the area under the curve.
+
+
 2) Have a basic area under the curve functiont hat can run on all the diagrams. It is simple and elegant, but could be better.
 
 Next Steps
