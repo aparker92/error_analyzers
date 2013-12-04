@@ -8,6 +8,7 @@
 #  To install 'pracma' R package:
 #  Within R Studio open the window in the lower right corner of your screen.
 #  Open _Packages_ > *Install Packages* > search for 'pracma' and install.
+#  or you could just run following code -> install.packages('pracma')
 
 library(pracma)
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
