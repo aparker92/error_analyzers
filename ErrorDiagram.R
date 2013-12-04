@@ -69,6 +69,7 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
 }
 
 #Sample example for how the above function works
+#data set is available at https://github.com/aparker92/error_analyzers/blob/master/socal.txt
 socal.dat = read.table("/Users/bonghyunkim/Downloads/socal.txt",header=T)
 start = ISOdate(1984,1,1,0,0,0)
 test.start = ISOdate(2004,6,18,0,0,0)
