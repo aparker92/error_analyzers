@@ -1,4 +1,5 @@
-Here are the steps to reproduce our exact steps in analyzng the area under the curve:
+Here are the steps to reproduce our exact steps in analyzng the area under the curve
+===============
 
 1) Download the Luen Code from our Github
 
