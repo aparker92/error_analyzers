@@ -8,6 +8,7 @@
 #  To install 'pracma' R package:
 #  Within R Studio open the window in the lower right corner of your screen.
 #  Open _Packages_ > *Install Packages* > search for 'pracma' and install.
+#  or you could just run following code -> install.packages('pracma')
 
 library(pracma)
 createErrorDiagram <- function(data, startDate, testStartDate, finishDate, modelFunction, parameters) {
@@ -66,6 +67,7 @@ createErrorDiagram <- function(data, startDate, testStartDate, finishDate, model
 }
 
 #Sample example for how the above function works
+#data set is available at https://github.com/aparker92/error_analyzers/blob/master/socal.txt
 socal.dat = read.table("/Users/bonghyunkim/Downloads/socal.txt",header=T)
 start = ISOdate(1984,1,1,0,0,0)
 test.start = ISOdate(2004,6,18,0,0,0)
