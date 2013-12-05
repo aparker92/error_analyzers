@@ -72,6 +72,7 @@ socal.dat = read.table("/Users/bonghyunkim/Downloads/socal.txt",header=T)
 start = ISOdate(1984,1,1,0,0,0)
 test.start = ISOdate(2004,6,18,0,0,0)
 finish = ISOdate(2010,1,1,0,0,0)
+#Sample ETAS function to measure the confidene interval.
 etas.CI <- function (time,t.events,mag.events,m0,mu,K,alpha,c,p) {
   mu+sum(K*10^(alpha*(mag.events-m0))/(time-t.events+c)^p)
 }
