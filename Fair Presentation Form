@@ -1,6 +1,6 @@
 1) What was your team's general take on reproducibility before taking this class? What did you all know or think about it before taking this class? 
 
-
+-I did not really think about collaboration before this class as I had not really focused too much on research. However, this project as well as a few others I have done regarding data analysis and coding have opened my eyes to its importance. If coding is going to be the backbone of science, then reproducibility will be absolutely necessary.
 
 
 
@@ -10,7 +10,7 @@
 
 2) After taking this class, what are your team's thoughts on reproducibility? 
 
-
+-Reproducibility is not just for convenience. It is a necessary goal in science.
 
 
 
@@ -18,7 +18,7 @@
 
 3) How did your team work in a reproducible manner?
 
-
+Our team tried improving on Luen's existing code. While we could not improve it everywhere, we annotated it to allow for people to understand why we did some things and where we got our equations from.
 
 
 
@@ -26,33 +26,33 @@
 
 4) How does your team see themselves applying what they've learned in this class about reproducibility into their future work? 
 
+I will not go into research, so I do not know when my work would have to be reproducible. However, in any business projects I will try to make my research and analysis reproducible.
 
 
 
 
+5) Are there any cool things happening in the world regarding reproducibility that your team would like us to showcase for our presentation?
 
-5) How does your team see themselves applying what they've learned in this class about reproducibility into their future work? 
-
-
-
+I have little knowledge of anything like that, but a huge historic case is the recent Rheinhart and Rogoff paper that favored austerity measures. The paper was later proved to have a coding error in it that threw off their results drastically.
 
 
 
 6) What did you think collaboration was before this class?
 
-
+I thought collaboration was working together to accomplish a goal.
 
 
 
 7) After taking this class, has your views changed? If so, how?
 
-
+My views haven't changed on its meaning, but I view it as much harder than before.
 
 
 
 
 8) How did your team work collaboratively?
 
+Our team was very effective at mesaaging to express concerns, ideas, and set up meetings. Overall, we did a good job of staying on pace to accomplish our goals. 
 
 
 
@@ -62,10 +62,17 @@
 9) What tools or methods do you think you will use in the future in terms of collaboration? What will you not use?
 
 
-
+I will use GitHub, irc, facebook, more social media, etc. I wouldn't rule out using anything, but more popular forms of communication are probably best.
 
 
 
 
 10) Any notes from your team on what worked and what didn't in terms of managing the earthquake project?
+
+What worked:
+  GitHub to set up meetings
+  The combination of everyone's skills- the different skills in our group meshed together quite well, from coding to communicating to organizing, etc.
+  
+What didn't work
+  Limiting confusion-even with maxmum communication, it was hard to keep everything together at times. Consensus is hard in larger groups so getting everyone on the same page was sometimes tricky.
 
